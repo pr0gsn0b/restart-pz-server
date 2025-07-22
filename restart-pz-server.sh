@@ -30,6 +30,8 @@ if ! rcon -a 10.0.0.74:27015 -p 1234 'players' | grep -q "(0)"; then
     sleep 15
 
     ssh root@10.0.0.74 'systemctl restart pz-server'
+    echo "server restarted"
+    exit 1
 else
     echo "no players connected"
     rcon -a 10.0.0.74:27015 -p 1234 'save'
@@ -39,4 +41,6 @@ else
     sleep 15
 
     ssh root@10.0.0.74 'systemctl restart pz-server'
+    echo "server restarted"
+    exit 1
 fi
