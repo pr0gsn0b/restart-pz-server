@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! rcon -a 10.0.0.74:27015 -p 1234 | grep -q "(0)"; then
+if ! rcon -a 10.0.0.74:27015 -p 1234 'players' | grep -q "(0)"; then
     echo "players connected"
     rcon -a 10.0.0.74:27015 -p 1234 'servermsg "Server will restart in 5 minutes. Get to a safe place!"'
     sleep 240
